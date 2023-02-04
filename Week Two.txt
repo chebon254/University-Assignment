@@ -40,27 +40,24 @@ namespace SimpleCalculator
             else if(operation == "B"){
 
                 // User to give principal rate
-                Console.WriteLine("Enter Principal Rate (P): ");
+                Console.WriteLine("Enter Principal Rate (p): ");
 
                 int principal = Convert.ToInt32(Console.ReadLine());
 
 
                 // User to give Rate
-                Console.WriteLine("Enter Rate(R): ");
+                Console.WriteLine("Enter Rate(r): ");
 
                 int rate = Convert.ToInt32(Console.ReadLine());
 
 
                 // User to give Time
-                Console.WriteLine("Enter Time(T): ");
+                Console.WriteLine("Enter Time(t): ");
 
                 int time = Convert.ToInt32(Console.ReadLine());
-                // User to give Anual Compound
-                Console.WriteLine("Enter Time(T): ");
-                int annual_compound = Convert.ToInt32(Console.ReadLine());
 
 
-                double compund_interest = principal * Math.Pow((1 + (rate/100)),(time));
+                double compund_interest = principal * Math.Pow((1 + (rate/100)),(time)) - principal;
                 Console.WriteLine("Compund Interest: " + compund_interest);
 
             } else
