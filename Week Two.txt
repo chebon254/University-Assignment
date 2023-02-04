@@ -1,77 +1,60 @@
 using System;
-
 namespace SimpleCalculator
+
 {
-
-    internal class Program
-    {
-
-        static void Main(string[] args)
-        {
-
+    internal class Program{
+        static void Main(string[] args){
             // Operation
+
             Console.WriteLine("Enter An A or B (A-Simple Interest or B- Compound Interest): ");
-
             String operation = Convert.ToString(Console.ReadLine());
-
            
-            if(operation == "A")
-            {
+
+            if(operation == "A"){
+
                 // User to give principal rate
+
                 Console.WriteLine("Enter Principal Rate (P): ");
+                int principal = Convert.ToInt32(Console.ReadLine());                // User to give Rate
 
-                int principal = Convert.ToInt32(Console.ReadLine());
-
-
-                // User to give Rate
                 Console.WriteLine("Enter Rate(R): ");
+                int rate = Convert.ToInt32(Console.ReadLine());                // User to give Time
 
-                int rate = Convert.ToInt32(Console.ReadLine());
-
-
-                // User to give Time
                 Console.WriteLine("Enter Time(T): ");
-
                 int time = Convert.ToInt32(Console.ReadLine());
-
                 int simple_interest = (principal*rate*time)/100;
+
                 Console.WriteLine("Simple Interest: " + simple_interest);
+
             }
+
             else if(operation == "B"){
-
                 // User to give principal rate
+
                 Console.WriteLine("Enter Principal Rate (p): ");
+                int principal = Convert.ToInt32(Console.ReadLine());                // User to give Rate
 
-                int principal = Convert.ToInt32(Console.ReadLine());
-
-
-                // User to give Rate
                 Console.WriteLine("Enter Rate(r): ");
+                int rate = Convert.ToInt32(Console.ReadLine());                // User to give Time
 
-                int rate = Convert.ToInt32(Console.ReadLine());
-
-
-                // User to give Time
                 Console.WriteLine("Enter Time(t): ");
-
                 int time = Convert.ToInt32(Console.ReadLine());
+
                 // User to give Anual Compound
+
                 Console.WriteLine("Anual Compound(n): ");
-                int annual_compound = Convert.ToInt32(Console.ReadLine());
 
+                int annual_compound = Convert.ToInt32(Console.ReadLine());                double compund_interest = principal * Math.Pow((1 + (rate/100) / annual_compound),(annual_compound * time));
 
-                double compund_interest = principal * Math.Pow((1 + (rate/100) / annual_compound),(annual_compound * time));
                 Console.WriteLine("Compund Interest: " + compund_interest);
-
             } else
+
             {
+
                 Console.WriteLine("Wrong Input");
+
             }
-
-
 
         }
-
     }
-
 }
