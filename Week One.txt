@@ -1,0 +1,81 @@
+using System;
+
+namespace SimpleCalculator
+{
+
+    internal class Program
+    {
+
+        static void Main(string[] args)
+        {
+
+            Char operation;
+
+            // Use to give their first Number
+            Console.WriteLine("Enter First Number: ");
+
+            int num_1 = Convert.ToInt32(Console.ReadLine());
+
+            // Operation
+            Console.WriteLine("Enter An Operation(+,-,x,/): ");
+
+            operation = Convert.ToChar(Console.ReadLine());
+
+            // Use to give their second Number
+            Console.WriteLine("Enter First Number: ");
+
+            int num_2 = Convert.ToInt32(Console.ReadLine());
+
+            // Adding
+            if (operation == '+')
+
+            {
+
+                int added_num = num_1 + num_2;
+
+                Console.WriteLine("Num 1 Plus Num 2: " + added_num);
+
+            }
+            // Subtracting
+            else if (operation == '-')
+
+            {
+
+                int subtract_num = num_1 - num_2;
+
+                Console.WriteLine("Num 1 Minus Num 2: " + subtract_num);
+
+            }
+            // Multiplying
+            else if (operation == 'x')
+
+            {
+
+                int multiple_num = num_1 * num_2;
+
+                Console.WriteLine("Num 1 Multiplied Num 2: " + multiple_num);
+
+            }
+            // Division
+            else if (operation == '/')
+
+            {
+
+                int divided_num = num_1 / num_2;
+
+                Console.WriteLine("Num 1 Divided by Num 2: " + divided_num);
+
+            }
+            else
+
+            {
+
+                Console.WriteLine("Wrong Character");
+
+            }
+
+        }
+
+    }
+
+}
