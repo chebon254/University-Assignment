@@ -38,27 +38,25 @@ namespace SimpleCalculator
                 Console.WriteLine("Simple Interest: " + simple_interest);
             }
             else if(operation == "B"){
+                double Total = 0, interestRate, years, annualCompound, Amount;
 
-                // User to give principal rate
-                Console.WriteLine("Enter Principal Rate (p): ");
+                Console.Write("Enter the Initial Amount : ");
+                Amount = Convert.ToDouble(Console.ReadLine());
 
-                int principal = Convert.ToInt32(Console.ReadLine());
+                Console.Write("Enter the Rate of Interest : ");
+                interestRate = Convert.ToDouble(Console.ReadLine()) / 100;
 
+                Console.Write("Enter the Number of Years : ");
+                years = Convert.ToDouble(Console.ReadLine());
 
-                // User to give Rate
-                Console.WriteLine("Enter Rate(r): ");
+                Console.Write("Number of Times the Interest will be Compounded : ");
+                annualCompound = Convert.ToDouble(Console.ReadLine());
+                for (int t = 1; t < years + 1; t++)
+                {
+                    Total = Amount * Math.Pow((1 + interestRate / annualCompound), (annualCompound * t));
+                    Console.Write("Your Total: " + Total);
 
-                int rate = Convert.ToInt32(Console.ReadLine());
-
-
-                // User to give Time
-                Console.WriteLine("Enter Time(t): ");
-
-                int time = Convert.ToInt32(Console.ReadLine());
-
-
-                double compund_interest = principal * Math.Pow((1 + (rate/100)),(time)) - principal;
-                Console.WriteLine("Compund Interest: " + compund_interest);
+                }
 
             } else
             {
